@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheTechBlog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Tech-Blog/public/css/reset.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="text-center m-3">The Tech Blog</h1>
+        <ul class="d-flex flex-row justify-content-around">
+            <li class="text-white bg-primary p-3 rounded"><a href="/">Home</a></li>
+            <li class="text-white bg-primary p-3 rounded"><a href="/dashboard">Dashboard</a></li>
+            <li class="text-white bg-primary p-3 rounded"><a href="/login">Login</a></li>
+            <li class="text-white bg-primary p-3 rounded"><a href="/signup">Signup</a></li>
+        </ul>
+    </header>
+    <main>
+
+
+
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Sign Up</h2>
+        </div>
+        <form id="signup-form" class="card-body d-flex flex-column justify-content-center align-items-center p-5">
+          <div>
+            <label for="username-input-login">Username</label>
+            <input type="text" id="username-input-signup" />
+          </div>
+          <div>
+            <label for="password-input-signup" class="form-label">Password</label>
+            <input type="password" id="password-input-singup" />
+          </div>
+          <button type="submit" id="signup-btn" class="btn col-2 text-white bg-success p-3 rounded m-3">Sign Up!</button>
+          <a type="button" class="btn col-2 text-white bg-primary p-3 rounded m-3" href="/login">Log In Instead</a>
+
+        </form>
+      </div>
+      <script src="/js/signup.js"></script>
+
+
+
+
+    </main>
+
+</body>
+</html>
