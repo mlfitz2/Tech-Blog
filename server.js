@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // // connecting hbs to functions in helpers file for formatting etc.
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ });
 
 // Configure and link a session object with the sequelize store
 const sess = {

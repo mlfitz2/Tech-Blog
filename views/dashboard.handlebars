@@ -1,0 +1,54 @@
+<section>
+    <h1>My Dashboard</h1>
+    <br/><hr/>
+</section>
+<section class="post-container">
+    <h2>
+        Add a Post
+    </h2>
+    <form id="new-post-form">
+        <div class="form-field">
+            <label for="new-post-title">Title:</label>
+            <input class="form-input" type="text" id="new-post-title" required aria-required="true"/>
+            <textarea name="new-post" id="new-post" class="comment-field" maxlength="250" required aria-required="true"></textarea>
+        </div>
+        <p class="error" style="display: none;">❌ Please enter a complete title and post content.</p>
+        <button class="btn-primary" type="submit">Create Post</button>
+    </form>
+</section>
+<section>
+    <h2>
+        My Posts
+    </h2>
+    <p>
+        You can modify existing posts by selecting and editing the text directly and clicking the Update button.
+    </p>
+    {{#each posts as |post|}}
+        <article>
+            <div class="post-header">
+                <h2 id="post-title">
+                    {{post.title}}
+                </h2>
+                <h3>
+                    Posted by <strong>{{post.user.name}}</strong> on <strong>{{post.date_created}}</strong>
+                </h3>
+            </div>
+            <p id="{{post.id}}" class="post-body" contenteditable="true" data-id="{{post.id}}">
+                {{post.post_text}}
+            </p>
+            <div class="post-footer">
+                <p class="comment-count">
+                    {{post.comments.length}} Comments
+                </p>
+                <div>
+                    <a href="/api/posts/{{post.id}}" class="btn-primary btn-wide">View Full Post</a>
+                    <button class="btn-primary post-update" data-id="{{post.id}}">Update</button>
+                    <button class="btn-primary post-delete" data-id="{{post.id}}">Delete</button>
+                </div>
+            </div>
+        </article>
+    {{/each}}
+</section>
+
+
+<script src="/js/dashboard.js"></script>
