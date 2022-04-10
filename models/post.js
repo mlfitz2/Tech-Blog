@@ -15,25 +15,25 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post_text: {
-      type: DataTypes.STRING(10000),
-    },
-    date_created: {
-      type: DataTypes.DATE,
+    content: {
+      type: DataTypes.STRING(500),
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      validate: {
+        len: [2, 500]
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
-      },
-    },
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',

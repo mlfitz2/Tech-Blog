@@ -42,7 +42,6 @@ router.get('/', withAuth, async (req, res) => {
         const posts = postData.map((post) => post.get({ plain: true }));
         res.status(200).render('dashboard', {
           posts,
-          // Pass the logged in flag to the template
           logged_in: req.session.logged_in,
           username: req.session.username
         });
@@ -54,7 +53,6 @@ router.get('/', withAuth, async (req, res) => {
 
 
 router.put('/:id', withAuth, async (req, res) => {
-    // update a post by its `id` value
     try{
         const postData = await Post.update(
             {
@@ -79,7 +77,6 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
-    // delete a post by its `id` value
     try {
       const postData = await Post.destroy(
         {

@@ -1,18 +1,27 @@
-<div class="card">
-  <div class="card-header">
-    <h2 class="text-center">Login</h2>
-  </div>
-  <form id="login-form" class="card-body d-flex flex-column justify-content-center align-items-center p-5">
-    <div>
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
-    </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="login-btn" class="btn col-2 text-white bg-success p-3 rounded m-3">Login!</button>
-    <a type="button" class="btn col-2 text-white bg-primary p-3 rounded m-3" href="/signup">Sign up instead</a>
-  </form>
-</div>
+<section class="login-signup">
+    <form class="form login-form">
+        <h2>
+            Login
+        </h2>
+        <label for="username-login">username:</label>
+        <input class="form-input" type="text" id="username-login" required aria-required="true">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" required aria-required="true" minlength="8"/>
+        <p class="error" style="display: none;">Incorrect User Information</p>
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <form class="form signup-form">
+        <h2>
+            Sign Up
+        </h2>
+        <label for="username-signup">username:</label>
+        <input class="form-input" type="text" id="username-signup" required aria-required="true" minlength="2"/>
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="email" id="email-signup" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" required aria-required="true" minlength="8"/>
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+</section>
+
 <script src="/js/login.js"></script>

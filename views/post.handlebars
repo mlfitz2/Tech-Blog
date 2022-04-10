@@ -1,0 +1,43 @@
+<section>
+  <article>
+    <div class="post-header">
+      <h2 id="post-title" data-id="{{post.id}}">
+        {{post.title}}
+      </h2>
+      <h3>
+        Posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.createdAt}}</strong>
+      </h3>
+    </div>
+      <p class="post-body">
+        {{post.content}}
+      </p>
+    <div class="post-footer">
+    </div>
+    <p class="comment-title">
+      <strong>{{post.comments.length}} Comments</strong>
+    </p>
+        {{#each post.comments as |comment|}}
+          <div class="comment-box">
+            <p class="comment">
+              {{comment.comment}}
+            </p>
+            <p class="comment-stamp">
+              By <strong>{{comment.user.username}}</strong> on <strong>{{format_date comment.createdAt}}</strong>
+            </p>
+          </div>
+        {{/each}}
+  </article>
+</section>
+<section class="comment-container">
+    <form id="comment-form">
+        <div class="form-field">
+          <label for="comment-box">Add a Comment</label>
+          <textarea name="comment" class="comment-field" maxlength="250"/></textarea>
+        </div>
+        <p class="error" style="display: none;">Field Cannot Be Blank</p>
+        <p class="auth" style="display: none;">You Must Be Logged In To Post</p>
+        <button class="btn-primary btn-wide" type="submit">Add Comment</button>
+    </form>
+</section>
+
+<script src="/js/comment.js"></script>

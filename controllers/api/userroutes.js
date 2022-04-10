@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-console.log('User' + User)
 
 router.post('/login', async (req, res) => {
   try {
-    // Find the user who matches the provided username
     const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
@@ -12,7 +10,6 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // Verify the posted password with the password store in the database
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -20,7 +17,6 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // Create session variables based on the logged in user
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
@@ -37,13 +33,12 @@ router.post('/login', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try {
-    // create a new user
     const userData = await User.create({
-      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
       password: req.body.password
     });
 
-    // Create session variables based on the logged in user
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
@@ -60,7 +55,6 @@ router.post('/signup', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
-    // Remove the session variables
     req.session.destroy(() => {
       res.status(204).end();
     });

@@ -1,4 +1,3 @@
-// add a new post
 const addPost = async (event) => {
     event.preventDefault();
 
@@ -6,7 +5,7 @@ const addPost = async (event) => {
     const content = document.querySelector('#new-post').value.trim();
     const errorMessage = document.querySelector('.error');
 
-    if(content.length < 1 || title.length < 1) {
+    if(content.length < 2 || title.length < 2) {
         errorMessage.style.display = "block";
         return;
     };
@@ -28,8 +27,6 @@ document.querySelector('#new-post-form').addEventListener('submit', addPost);
 
   
 
-
-// update a post
 const updatePost = async (event) => {
     event.preventDefault();
 
@@ -54,7 +51,6 @@ document.querySelectorAll('.post-update').forEach(function(btn) {
 });
 
 
-// delete a post
 
 const deletePost = async (event) => {
     event.preventDefault();

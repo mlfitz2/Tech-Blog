@@ -6,11 +6,11 @@
           <a href="/api/posts/{{post.id}}">{{post.title}}</a>
         </h2>
         <h3>
-          Posted by <strong>{{post.user.name}}</strong> on <strong>{{post.date_created}}</strong>
+          Posted by <strong>{{post.user.username}}</strong> on <strong>{{format_date post.createdAt}}</strong>
         </h3>
       </div>
         <p class="post-body">
-          {{post.post_text}}
+          {{post.content}}
         </p>
       <div class="post-footer">
         <p>

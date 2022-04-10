@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Test Post",
+        "content": "This is my first post. What a great post!",
+        "user_id": "2"
+    },
+    {
+        "title": "Test 2",
+        "content": "Hey look, I'm posting now.",
+        "user_id": "4"
+    },
+    {
+        "title": "Test 3",
+        "content": "Now it's my turn to post!",
+        "user_id": "1"
+    },
+    {
+        "title": "Test 4",
+        "content": "Don't forget me! I want to post too!",
+        "user_id": "3"
+    }
+]
