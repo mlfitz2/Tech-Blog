@@ -5,38 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <header>
+  <header class="d-flex justify-content-center align-items-center">
     <h1>
       The Tech Blog
     </h1>
-
-    <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/api/dashboard">Dashboard</a></li>
-          {{#if logged_in}}
-            <li><a class="btn-secondary" id="logout">Logout</a></li>
-          {{else}}
-            <li><a href="/login" class="btn-primary" id="login">Login</a></li>
-          {{/if}}
-          </ul>
-    </nav>
   </header>
+
+  <div class="d-flex flex-row">
+    <nav>
+      <ul class="navbar d-flex justify-content-around align-items-center">
+        <li class="navlink"><a href="/">Home</a></li>
+        <li class="navlink"><a href="/api/dashboard">Dashboard</a></li>
+        {{#if logged_in}}
+          <li class="navlink"><a id="logout">Logout</a></li>
+        {{else}}
+          <li class="navlink"><a href="/login" id="login">Login</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+
   <main>
     {{#if logged_in}}
-      <p class="username">
+      <p class="username text-center">
         Logged in as <strong>{{username}}</strong>
       </p>
     {{/if}}
     {{{ body }}}
   </main>
+  </div>
+
   <footer>
       The Tech Blog 2022
   </footer>

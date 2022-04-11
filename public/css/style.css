@@ -1,0 +1,47 @@
+:root {
+    --darkblue: #0e0d4d;
+    --lightblue: #d2e4f0;
+    --brightblue: #2544f7;
+    --orange: #f3a641;
+}
+
+body {
+    background-color: var(--lightblue);
+}
+
+header {
+    background-color: var(--darkblue);
+    color: var(--orange);
+    height: 20vh;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+}
+
+nav {
+    background-color: var(--orange);
+    color: var(--darkblue);
+    min-width: 15vw;
+}
+
+.navlink {
+    font-weight: 900;
+    margin: 20%;
+}
+
+.post-display {
+    min-width: 75vw;
+    font-size: 1.5em;
+}
+
+
+
+
+footer {
+    background-color: var(--darkblue);
+    color: var(--orange);
+    text-align: center;
+    padding: 1%;
+    height: 5vh;
+}
+
