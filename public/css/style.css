@@ -29,8 +29,28 @@ nav {
     margin: 20%;
 }
 
-.post-display {
+.post-display, .post-container {
     min-width: 75vw;
+    font-size: 1.5em;
+}
+
+.username {
+    font-weight: 900;
+    font-size: 1.5em;
+    color: var(--darkblue);
+}
+
+#new-post-title {
+    min-width: 20vw;
+}
+
+#new-post {
+    min-width: 50vw;
+    min-height: 10vh;
+}
+
+h2 {
+    text-align: center;
     font-size: 1.5em;
 }
 

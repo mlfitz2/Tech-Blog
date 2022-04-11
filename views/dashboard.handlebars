@@ -1,12 +1,12 @@
-<section class="post-container">
+<section class="post-container d-flex flex-column text-center p-4">
     <h2>
         Add Post
     </h2>
     <form id="new-post-form">
-        <div class="form-field">
+        <div class="form-field d-flex flex-column align-items-center">
             <label for="new-post-title">Post Title:</label>
-            <input class="form-input" type="text" id="new-post-title" required aria-required="true"/>
-            <textarea name="new-post" id="new-post" class="comment-field" maxlength="250" required aria-required="true"></textarea>
+            <input class="form-input" type="text" class="m-3" id="new-post-title" required aria-required="true"/>
+            <textarea name="new-post" id="new-post" class="comment-field m-3" maxlength="250" required aria-required="true"></textarea>
         </div>
         <p class="error" style="display: none;">Error: Please Fill Out All Required Fields</p>
         <button class="btn-primary" type="submit">Create Post</button>
@@ -18,7 +18,7 @@
     </h2>
 
     {{#each posts as |post|}}
-        <article>
+        <article class="d-flex flex-column justify-content-center align-items-center">
             <div class="post-header">
                 <h2 id="post-title">
                     {{post.title}}

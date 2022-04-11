@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//post user comments
 router.post('/', async (req, res) => {
     if (!req.session.logged_in) {
         res.status(403).send();
