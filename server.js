@@ -19,8 +19,8 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: 'Secret secret secret',
   cookie: {
-    // Session expires after 1 min of inactivity.
-    expires: 60000
+
+    expires: 600000
   },
   resave: false,
   saveUninitialized: true,
