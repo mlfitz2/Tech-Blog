@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-
+//user logs in based on username
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -11,6 +11,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    //check the entered password is correct
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {

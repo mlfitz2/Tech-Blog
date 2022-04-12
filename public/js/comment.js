@@ -25,7 +25,7 @@ const comment = async (event) => {
         (response.status == 403) {
           authMessage.style.display = "block";
         } else {
-            alert('Please try resubmitting your comment');
+            alert('Error: please try again');
         }
 }
 

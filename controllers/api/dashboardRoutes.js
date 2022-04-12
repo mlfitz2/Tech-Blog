@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//home screen
+
 router.post('/', withAuth, async (req, res) => {
     try {
         Post.create({
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 })
 
-//pull user's posts
+
 router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({

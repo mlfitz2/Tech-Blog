@@ -7,7 +7,6 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-// Create a new sequelize store using the express-session package
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -15,11 +14,11 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-// Configure and link a session object with the sequelize store
-const sess = {
-  secret: 'Secret secret secret',
-  cookie: {
 
+const sess = {
+  secret: 'Secret',
+  cookie: {
+//logout after 10 minutes
     expires: 600000
   },
   resave: false,
@@ -29,7 +28,7 @@ const sess = {
   })
 };
 
-// Add express-session and store as Express.js middleware
+//add express
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

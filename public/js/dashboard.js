@@ -26,7 +26,7 @@ const addPost = async (event) => {
 document.querySelector('#new-post-form').addEventListener('submit', addPost);
 
   
-
+//update posts that have already been posted
 const updatePost = async (event) => {
     event.preventDefault();
 
@@ -51,7 +51,7 @@ document.querySelectorAll('.post-update').forEach(function(btn) {
 });
 
 
-
+//users delete posts
 const deletePost = async (event) => {
     event.preventDefault();
 
